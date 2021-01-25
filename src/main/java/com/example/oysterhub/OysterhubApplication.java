@@ -50,6 +50,14 @@ public class OysterhubApplication implements CommandLineRunner {
         }
     }
 
+    public static double getAverage(int[] array){
+        int sum = 0;
+        for(int i=0; i<array.length; i++){
+            sum += array[i];
+        }
+        return (double) sum / (double) array.length;
+    }
+
     @GetMapping("/")
     public String sayGoodbye(@RequestParam(value="myName", defaultValue = "World") String name) {
         return String.format("Hello %s!", name);
