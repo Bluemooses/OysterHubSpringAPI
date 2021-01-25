@@ -20,10 +20,17 @@ public class OysterhubApplication implements CommandLineRunner {
             myIntArray[i] = i * 10;
         }
 
+        printArray(myIntArray);
+
+
+    }
+
+    public static void printArray(int[] array){
         for(int i=0; i<10; i++){
-            System.out.println("Element " + i + ", value is " + myIntArray[i]);
+            System.out.println("Element " + i + ", value is " + array[i]);
         }
     }
+
     @GetMapping("/")
     public String sayGoodbye(@RequestParam(value="myName", defaultValue = "World") String name) {
         return String.format("Hello %s!", name);
